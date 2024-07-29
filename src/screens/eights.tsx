@@ -1,7 +1,17 @@
 import img from '../assets/eights.jpg';
 import Connect from '../components/connect';
+import {useState} from "react";
+import AlertSuccess from '../components/alerts/alert.tsx';
 
 const MyComponent: React.FC = () => {
+    const [openAlertSuccess, setOpenAlertSuccess] = useState(false);
+    const handleSuccess = () => {
+        setOpenAlertSuccess(true);
+    }
+
+    const handleCloseAlertSuccess = () => {
+        setOpenAlertSuccess(false);
+    }
     return (
         <div style={{ width: "100vw", height: "100vh", position: 'relative', overflow: 'hidden' }}>
             <img
@@ -57,8 +67,9 @@ const MyComponent: React.FC = () => {
                 zIndex: 1,
                 overflow: 'auto'  // Добавляем прокрутку, если содержимое превышает высоту
             }}>
-                <Connect />
+                <Connect handleSuccess={handleSuccess}/>
             </div>
+            <AlertSuccess open={openAlertSuccess} handleClose={handleCloseAlertSuccess} />
         </div>
     );
 };

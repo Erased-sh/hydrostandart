@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
-const Connect: React.FC = () => {
+interface ConnectFormProps {
+    handleSuccess: () => void;
+}
+
+const Connect: React.FC<ConnectFormProps> = ({  handleSuccess }) => {
     // Состояния для хранения данных формы и ошибок
     const [formData, setFormData] = useState({ name: '', phone: '' });
     const [errors, setErrors] = useState({ phone: '' });
@@ -34,7 +38,7 @@ const Connect: React.FC = () => {
         e.preventDefault();
         if (isFormValid) {
             // Обработка отправки формы, если валидация прошла успешно
-            console.log('Форма отправлена:', formData);
+           handleSuccess();
             // Здесь может быть ваш код для отправки данных формы
         }
     };

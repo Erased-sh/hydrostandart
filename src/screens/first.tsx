@@ -1,8 +1,32 @@
 import img from '../assets/first.jpeg'; // Используйте корректное изображение
 import { Redeem } from '@mui/icons-material';
 import { Button, Typography } from "@mui/material";
+import Alert from '../components/alerts/alertWithWindow.tsx';
+import AlertSuccess from '../components/alerts/alert.tsx';
+import {useState} from "react";
 
 const MyComponent = () => {
+    const [openAlert, setOpenAlert] = useState(false);
+    const [openAlertSuccess, setOpenAlertSuccess] = useState(false);
+
+    // Функция для открытия Snackbar
+    const handleClick = () => {
+        setOpenAlert(true);
+    };
+
+    // Функция для закрытия Snackbar
+    const handleClose = () => {
+        setOpenAlert(false);
+    };
+
+    const handleSuccess = () => {
+        setOpenAlertSuccess(true);
+    }
+
+    const handleCloseAlertSuccess = () => {
+        setOpenAlertSuccess(false);
+    }
+
     return (
         <div style={{ width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden' }}>
             <img
@@ -34,6 +58,7 @@ const MyComponent = () => {
                 <Button
                     variant="contained"
                     color="primary"
+                    onClick={handleClick}
                     sx={{ backgroundColor: '#ebcd80', color: 'black', padding: '10px 20px', borderRadius: '20px', height:'60px', marginTop: '20px' }}
                 >
                     Рассчитать стоимость
@@ -65,12 +90,15 @@ const MyComponent = () => {
                 <Button
                     variant="contained"
                     color={'secondary'}
+                    onClick={handleClick}
                     sx={{ backgroundColor:'black',padding: '10px', borderRadius: '5px', textAlign: 'center' }}
                     style={{ wordWrap: 'break-word' }} // Позволяет перенос текста
                 >
                     Получить бесплатную консультацию с выездом замерщика
                 </Button>
             </div>
+            <Alert open={openAlert} handleClose={handleClose} handleSuccess={handleSuccess} />
+            <AlertSuccess open={openAlertSuccess} handleClose={handleCloseAlertSuccess} />
         </div>
     );
 };
