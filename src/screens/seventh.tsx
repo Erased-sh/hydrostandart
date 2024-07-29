@@ -1,7 +1,30 @@
 import FAQItem from '../components/card/faq';
 import { Grid } from '@mui/material';
+import Alert from '../components/alerts/alertWithWindow.tsx';
+import AlertSuccess from '../components/alerts/alert.tsx';
+import {useState} from "react";
 
 const FAQ: React.FC = () => {
+    const [openAlert, setOpenAlert] = useState(false);
+    const [openAlertSuccess, setOpenAlertSuccess] = useState(false);
+
+    // Функция для открытия Snackbar
+    const handleClick = () => {
+        setOpenAlert(true);
+    };
+
+    // Функция для закрытия Snackbar
+    const handleClose = () => {
+        setOpenAlert(false);
+    };
+
+    const handleSuccess = () => {
+        setOpenAlertSuccess(true);
+    }
+
+    const handleCloseAlertSuccess = () => {
+        setOpenAlertSuccess(false);
+    }
     return (
         <div style={{ backgroundColor: "white", minHeight: '50vh', padding: '20px', boxSizing: 'border-box' }}>
             <h1 style={{ textAlign: 'center', marginBottom: '20px', color: 'black' }}>Часто задаваемые вопросы</h1>
@@ -48,7 +71,7 @@ const FAQ: React.FC = () => {
             </Grid>
             <div style={{ textAlign: 'center', marginTop: '40px' }}>
                 <h1 style={{ fontSize: '16px', color: 'black', height:'auto',width:'auto' }}>Не нашли ответа? Мы с радостью ответим на любой вопрос!</h1>
-                <button style={{
+                <button onClick={handleClick} style={{
                     backgroundColor: 'black',
                     color: 'white',
                     padding: '10px 20px',
@@ -61,6 +84,8 @@ const FAQ: React.FC = () => {
                     Задать вопрос
                 </button>
             </div>
+            <Alert open={openAlert} handleClose={handleClose} handleSuccess={handleSuccess} />
+            <AlertSuccess open={openAlertSuccess} handleClose={handleCloseAlertSuccess} />
         </div>
     );
 };
