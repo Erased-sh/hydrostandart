@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Dialog, DialogActions, DialogContent, DialogTitle, Button, TextField } from '@mui/material';
+import axios from "axios";
 
 
 interface ConnectFormProps {
@@ -36,6 +37,13 @@ const ConnectForm: React.FC<ConnectFormProps> = ({ open, handleClose, handleSucc
         e.preventDefault();
         if (isFormValid) {
             console.log('Форма отправлена:', formData);
+            axios.post('http://localhost:8080', formData)
+                .then(response => {
+                    console.log(response.status);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
             handleSuccess(); // Показываем успешный алерт
             handleClose(); // Закрываем модальное окно
         }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from "axios";
 
 interface ConnectFormProps {
     handleSuccess: () => void;
@@ -37,9 +38,14 @@ const Connect: React.FC<ConnectFormProps> = ({  handleSuccess }) => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (isFormValid) {
-            // Обработка отправки формы, если валидация прошла успешно
+            axios.post('http://localhost:8080', formData)
+                .then(response => {
+                   console.log(response.status);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
            handleSuccess();
-            // Здесь может быть ваш код для отправки данных формы
         }
     };
 
