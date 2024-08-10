@@ -32,7 +32,12 @@ const MyComponent = () => {
             <img
                 src={img}
                 alt="first"
-                style={{ width: '100vw', height: '100%', objectFit: 'cover' }}
+                style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center' // Можно настроить центрирование изображения
+                }}
             />
             <div style={{
                 position: 'absolute',
@@ -102,5 +107,6 @@ const MyComponent = () => {
         </div>
     );
 };
+
 
 export default MyComponent;

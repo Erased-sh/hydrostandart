@@ -12,25 +12,27 @@ const TeamCard: React.FC<TeamCardProps> = ({ imgSrc, name, title, description })
         <div style={{
             display: 'flex',
             alignItems: 'center',
-            marginBottom: '20px',
-            padding: '15px',
-            borderRadius: '8px',
+            // marginBottom: '20px',
+            // padding: '15px',
+            // borderRadius: '8px',
         }}>
             <div style={{
-                width: '300px',
-                height: '300px',
-                marginRight: '20px',
-                borderRadius: '50%',
-                overflow: 'hidden',
+                // width: '300px',
+                // height: '300px',
+                // marginRight: '20px',
+                // borderRadius: '50%',
+                // overflow: 'hidden',
                 display: 'flex',
+                // borderRadius: "100%"
             }}>
                 <img
                     src={imgSrc}
                     alt={name}
                     style={{
-                        width: '100%',
-                        height: '100%',
+                        height: '240px',
+                        aspectRatio: '1',
                         objectFit: 'cover',
+                        borderRadius: "100%"
                     }}
                 />
             </div>
