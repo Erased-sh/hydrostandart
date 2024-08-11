@@ -38,7 +38,7 @@ const Connect: React.FC<ConnectFormProps> = ({  handleSuccess }) => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (isFormValid) {
-            axios.post('http://localhost:8080', formData)
+            axios.post('http://45.87.247.20:8080', formData)
                 .then(response => {
                    console.log(response.status);
                 })
