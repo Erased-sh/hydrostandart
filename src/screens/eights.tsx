@@ -2,6 +2,7 @@ import img from '../assets/eights.jpg';
 import Connect from '../components/connect';
 import {useState} from "react";
 import AlertSuccess from '../components/alerts/alert.tsx';
+import {useMediaQuery} from "@mui/material";
 
 const MyComponent: React.FC = () => {
     const [openAlertSuccess, setOpenAlertSuccess] = useState(false);
@@ -12,12 +13,15 @@ const MyComponent: React.FC = () => {
     const handleCloseAlertSuccess = () => {
         setOpenAlertSuccess(false);
     }
+    const isMobile = useMediaQuery('(max-width:600px)');
+    const width = isMobile ? '100vh' : '100vw';
     return (
-        <div style={{ width: "100vw", height: "100vh", position: 'relative', overflow: 'hidden' }}>
+
+        <div style={{ width: width, height: "100vh", position: 'relative', overflow: 'hidden' }}>
             <img
                 src={img}
                 alt="background"
-                style={{ width: "100vw", height: "100%", objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
+                style={{ width: width, height: "100%", objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
             />
             <div style={{
                 position: 'absolute',
@@ -54,7 +58,7 @@ const MyComponent: React.FC = () => {
                 </ul>
             </div>
             {/* Вставляем компонент Connect */}
-            <div style={{
+            {!isMobile && (<div style={{
                 position: 'absolute',
                 bottom: '120px',
                 right: '380px',  // Увеличиваем отступ от правого края
@@ -68,7 +72,7 @@ const MyComponent: React.FC = () => {
                 overflow: 'auto'  // Добавляем прокрутку, если содержимое превышает высоту
             }}>
                 <Connect handleSuccess={handleSuccess}/>
-            </div>
+            </div>)}
             <AlertSuccess open={openAlertSuccess} handleClose={handleCloseAlertSuccess} />
         </div>
     );

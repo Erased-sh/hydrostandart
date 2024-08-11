@@ -6,17 +6,14 @@ interface ConnectFormProps {
 }
 
 const Connect: React.FC<ConnectFormProps> = ({  handleSuccess }) => {
-    // Состояния для хранения данных формы и ошибок
     const [formData, setFormData] = useState({ name: '', phone: '' });
     const [errors, setErrors] = useState({ phone: '' });
     const [isFormValid, setIsFormValid] = useState(false);
 
-    // Функция для обработки изменений в полях формы
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { id, value } = e.target;
         setFormData(prevData => ({ ...prevData, [id]: value }));
 
-        // Валидация номера телефона при изменении
         if (id === 'phone') {
             validatePhone(value);
         }

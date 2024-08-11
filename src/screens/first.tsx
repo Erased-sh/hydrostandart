@@ -1,6 +1,6 @@
 import img from '../assets/first.jpeg'; // Используйте корректное изображение
 import { Redeem } from '@mui/icons-material';
-import { Button, Typography } from "@mui/material";
+import {Button, Typography, useMediaQuery} from "@mui/material";
 import Alert from '../components/alerts/alertWithWindow.tsx';
 import AlertSuccess from '../components/alerts/alert.tsx';
 import {useState} from "react";
@@ -26,14 +26,15 @@ const MyComponent = () => {
     const handleCloseAlertSuccess = () => {
         setOpenAlertSuccess(false);
     }
-
-    return (
-        <div style={{ width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden' }}>
+    const isMobile = useMediaQuery('(max-width:600px)');
+    const width = isMobile ? '100vh' : '100vw';
+    return (//crutch
+        <div style={{ width: width, height: '100vh', position: 'relative', overflow: 'hidden' }}>
             <img
                 src={img}
                 alt="first"
                 style={{
-                    width: '100%',
+                    width: width,
                     height: '100%',
                     objectFit: 'cover',
                     objectPosition: 'center' // Можно настроить центрирование изображения
@@ -84,7 +85,7 @@ const MyComponent = () => {
                     </Typography>
                 </div>
             </div>
-            <div style={{
+            {!isMobile && (<div style={{
                 position: 'absolute',
                 top: '50%',
                 color: 'black',
@@ -101,7 +102,7 @@ const MyComponent = () => {
                 >
                     Получить бесплатную консультацию с выездом замерщика
                 </Button>
-            </div>
+            </div>)}
             <Alert open={openAlert} handleClose={handleClose} handleSuccess={handleSuccess} />
             <AlertSuccess open={openAlertSuccess} handleClose={handleCloseAlertSuccess} />
         </div>
