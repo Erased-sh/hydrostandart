@@ -29,7 +29,7 @@ const HeaderComponent: React.FC = () => {
 
     return (
         <>
-            <AppBar position="fixed" sx={{ backgroundColor: 'black', p: 2 }}>
+            <AppBar position="relative" sx={{ backgroundColor: 'black', p: 2 }}>
                 <Grid
                     container
                     alignItems="center"
