@@ -26,9 +26,10 @@ const MyComponent = () => {
     const handleCloseAlertSuccess = () => {
         setOpenAlertSuccess(false);
     }
-    const isMobile = useMediaQuery('(max-width:600px)');
+    const isMobile = useMediaQuery('(max-device-width: 300px)');
+    const isCrutch = useMediaQuery('(max-device-width: 1200px)');
     const width = isMobile ? '100vh' : '100vw';
-    return (//crutch
+    return (
         <div style={{ width: width, height: '100vh', position: 'relative', overflow: 'hidden' }}>
             <img
                 src={img}
@@ -93,7 +94,7 @@ const MyComponent = () => {
                 zIndex: 1,
                 width: '200px' // Устанавливаем ширину, чтобы текст кнопки переносился
             }}>
-                <Button
+                {!isCrutch  && <Button
                     variant="contained"
                     color={'secondary'}
                     onClick={handleClick}
@@ -101,7 +102,7 @@ const MyComponent = () => {
                     style={{ wordWrap: 'break-word' }} // Позволяет перенос текста
                 >
                     Получить бесплатную консультацию с выездом замерщика
-                </Button>
+                </Button>}
             </div>)}
             <Alert open={openAlert} handleClose={handleClose} handleSuccess={handleSuccess} />
             <AlertSuccess open={openAlertSuccess} handleClose={handleCloseAlertSuccess} />

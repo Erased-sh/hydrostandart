@@ -12,7 +12,7 @@ const Testimonials = () => {
     ];
 
     return (
-        <div style={{ backgroundColor: '#f2f2f2', minHeight: '70vh', padding: '20px', boxSizing: 'border-box' }}>
+        <div style={{ backgroundColor: '#f2f2f2', minHeight: '40vh', padding: '20px', boxSizing: 'border-box' }}>
             <h1 style={{ left:'200px', maxWidth:'800px', marginBottom: '20px', color: "black", margin: '0 auto' }}>Отзывы наших клиентов</h1>
             <h2 style={{ left:'200px', marginBottom: '40px', marginTop:'20px', fontSize: '16px', color: "black", maxWidth: '800px', margin: '0 auto' }}>
                 Наши клиенты доверяют нам самые ответственные проекты по гидроизоляции кровли и фундаментов. Вот что они говорят о нашей работе:

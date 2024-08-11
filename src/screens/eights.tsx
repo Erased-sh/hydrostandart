@@ -13,7 +13,8 @@ const MyComponent: React.FC = () => {
     const handleCloseAlertSuccess = () => {
         setOpenAlertSuccess(false);
     }
-    const isMobile = useMediaQuery('(max-width:600px)');
+    const isMobile = useMediaQuery('(max-device-width: 300px)');
+    const isCrutch = useMediaQuery('(max-device-width: 1200px)');
     const width = isMobile ? '100vh' : '100vw';
     return (
 
@@ -57,19 +58,18 @@ const MyComponent: React.FC = () => {
                     <li>Оставьте отзыв о нашей работе</li>
                 </ul>
             </div>
-            {/* Вставляем компонент Connect */}
-            {!isMobile && (<div style={{
+            {!isCrutch && (<div style={{
                 position: 'absolute',
                 bottom: '120px',
-                right: '380px',  // Увеличиваем отступ от правого края
-                maxHeight: '500px',  // Устанавливаем максимальную высоту
+                right: '380px',
+                maxHeight: '500px',
                 width: '400px',
-                backgroundColor: 'rgba(255, 255, 255, 0.8)',  // Полупрозрачный фон
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
                 borderRadius: '10px',
                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
                 padding: '20px',
                 zIndex: 1,
-                overflow: 'auto'  // Добавляем прокрутку, если содержимое превышает высоту
+                overflow: 'auto'
             }}>
                 <Connect handleSuccess={handleSuccess}/>
             </div>)}

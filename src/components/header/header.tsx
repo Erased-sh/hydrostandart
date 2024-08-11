@@ -25,8 +25,8 @@ const HeaderComponent: React.FC = () => {
     };
 
     // Определяем размер экрана
-    const isMobile = useMediaQuery('(max-width:600px)');
-
+    const isMobile = useMediaQuery('(max-device-width: 300px)');
+    const isCrutch = useMediaQuery('(max-device-width: 1200px)');
     return (
         <>
             <AppBar position="relative" sx={{ backgroundColor: 'black', p: 2 }}>
@@ -40,11 +40,11 @@ const HeaderComponent: React.FC = () => {
                 >
                     <Grid item>
                         <Typography variant={isMobile ? "h5" : "h3"} sx={{ letterSpacing: '0.1em', color: 'white' }}>
-                            AquaFort
+                            ГидроСтандарт
                         </Typography>
                     </Grid>
 
-                    {!isMobile && (
+                    {!isCrutch && (
                         <Grid item>
                             <Card sx={{ maxWidth: 400, backgroundColor: 'black' }}>
                                 <CardContent>
@@ -56,7 +56,7 @@ const HeaderComponent: React.FC = () => {
                         </Grid>
                     )}
 
-                    {!isMobile && (
+                    {!isCrutch && (
                         <Grid item>
                             <Typography variant="body2" sx={{ color: 'white' }}>
                                 Пн-Вс 9.00-21.00

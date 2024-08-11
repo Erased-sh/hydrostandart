@@ -5,8 +5,8 @@ import ProcessStep from '../components/card/process.tsx';
 const Process: React.FC = () => {
     return (
         <div style={{ backgroundColor: '#f2f2f2', minHeight: '70vh', padding: '20px', boxSizing: 'border-box' }}>
-            <h1 style={{marginLeft:'380px', margin: '0 auto',  marginBottom: '20px', color:"black" }}>Наш процесс</h1>
-            <h2 style={{marginLeft:'380px', marginBottom: '40px', fontSize: '16px', maxWidth: '800px', color:"black" }}>
+            <h1 style={{marginBottom: '20px', color:"black" }}>Наш процесс</h1>
+            <h2 style={{marginBottom: '40px', fontSize: '16px', maxWidth: '800px', color:"black" }}>
                 Этапы выполнения гидроизоляционных работ
             </h2>
             <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '20px' }}>

@@ -25,10 +25,11 @@ const FAQ: React.FC = () => {
     const handleCloseAlertSuccess = () => {
         setOpenAlertSuccess(false);
     }
+
     return (
         <div style={{ backgroundColor: "white", minHeight: '50vh', padding: '20px', boxSizing: 'border-box' }}>
             <h1 style={{ textAlign: 'center', marginBottom: '20px', color: 'black' }}>Часто задаваемые вопросы</h1>
-            <h2 style={{ marginLeft:'450px',textAlign: 'center', marginBottom: '40px', fontSize: '16px', maxWidth: '800px', color: 'black' }}>
+            <h2 style={{ marginLeft:"20px", textAlign: 'left', marginBottom: '40px', fontSize: '16px', maxWidth: '800px', color: 'black' }}>
                 Ответы на популярные вопросы о гидроизоляции
             </h2>
             <Grid container spacing={3} justifyContent="center">
