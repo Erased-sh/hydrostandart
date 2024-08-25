@@ -34,47 +34,57 @@ const MyComponent = () => {
                     </tr>
                     </thead>
                     <tbody>
-                    <tr style={{ borderBottom: '1px solid #ccc' }}>
-                        <td style={{ padding: '10px', color: 'black' }}>
+                    <tr style={{borderBottom: '1px solid #ccc'}}>
+                        <td style={{padding: '10px', color: 'black'}}>
                             <strong>Гидроизоляция кровли</strong>
                         </td>
-                        <td style={{ padding: '10px', color: 'black' }}>
+                        <td style={{padding: '10px', color: 'black'}}>
                             Защита кровли от протечек и влаги с использованием современных материалов
                         </td>
-                        <td style={{ padding: '10px', color: 'black' }}>
+                        <td style={{padding: '10px', color: 'black'}}>
                             <strong>от 450 ₽/м²</strong>
                         </td>
                     </tr>
-                    <tr style={{ borderBottom: '1px solid #ccc' }}>
-                        <td style={{ padding: '10px', color: 'black' }}>
+                    <tr style={{borderBottom: '1px solid #ccc'}}>
+                        <td style={{padding: '10px', color: 'black'}}>
                             <strong>Гидроизоляция фундамента</strong>
                         </td>
-                        <td style={{ padding: '10px', color: 'black' }}>
+                        <td style={{padding: '10px', color: 'black'}}>
                             Предотвращение разрушения фундамента из-за влаги и грунтовых вод
                         </td>
-                        <td style={{ padding: '10px', color: 'black' }}>
+                        <td style={{padding: '10px', color: 'black'}}>
                             <strong>от 700 ₽/м²</strong>
                         </td>
                     </tr>
-                    <tr style={{ borderBottom: '1px solid #ccc' }}>
-                        <td style={{ padding: '10px', color: 'black' }}>
+                    <tr style={{borderBottom: '1px solid #ccc'}}>
+                        <td style={{padding: '10px', color: 'black'}}>
                             <strong>Ремонт гидроизоляции</strong>
                         </td>
-                        <td style={{ padding: '10px', color: 'black' }}>
+                        <td style={{padding: '10px', color: 'black'}}>
                             Восстановление поврежденной гидроизоляции для продления срока службы конструкции
                         </td>
-                        <td style={{ padding: '10px', color: 'black' }}>
+                        <td style={{padding: '10px', color: 'black'}}>
                             <strong>от 450 ₽/м²</strong>
                         </td>
                     </tr>
+                    <tr style={{borderBottom: '1px solid #ccc'}}>
+                        <td style={{padding: '10px', color: 'black'}}>
+                            <strong>Уборка снега с кровли</strong>
+                        </td>
+                        <td style={{padding: '10px', color: 'black'}}>
+                        </td>
+                        <td style={{padding: '10px', color: 'black'}}>
+                            <strong>70 ₽/м²</strong>
+                        </td>
+                    </tr>
                     <tr>
-                        <td style={{ padding: '10px', color: 'black' }}>
+                        <td style={{padding: '10px', color: 'black'}}>
                             <strong>Консультация специалиста</strong>
                         </td>
-                        <td style={{ padding: '10px', color: 'black' }}>
+                        <td style={{padding: '10px', color: 'black'}}>
                             Профессиональная оценка состояния и рекомендация по гидроизоляции
                         </td>
-                        <td style={{ padding: '10px', color: 'black' }}>
+                        <td style={{padding: '10px', color: 'black'}}>
                             <strong>Бесплатно</strong>
                         </td>
                     </tr>
