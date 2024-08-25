@@ -69,10 +69,13 @@ const HeaderComponent: React.FC = () => {
                             <PhoneIcon sx={{ color: 'white', mr: 1 }} />
                             <Box>
                                 <Typography variant="body2" sx={{ color: 'white', textAlign: isMobile ? 'center' : 'left' }}>
-                                    +7 (123) 456-78-90
+                                    +7 (923) 611-93-03
                                 </Typography>
                                 <Typography variant="body2" sx={{ color: 'white', textAlign: isMobile ? 'center' : 'left' }}>
-                                    +7 (098) 765-43-21
+                                    +7 (993) 351-08-79
+                                </Typography>
+                                <Typography variant="body2" sx={{ color: 'white', textAlign: isMobile ? 'center' : 'left' }}>
+                                    +7 (977) 989-07-68
                                 </Typography>
                             </Box>
                         </Box>
