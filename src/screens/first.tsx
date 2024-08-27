@@ -1,5 +1,4 @@
 import img from '../assets/first.jpeg'; // Используйте корректное изображение
-import { Redeem } from '@mui/icons-material';
 import {Button, Typography, useMediaQuery} from "@mui/material";
 import Alert from '../components/alerts/alertWithWindow.tsx';
 import AlertSuccess from '../components/alerts/alert.tsx';
@@ -80,10 +79,6 @@ const MyComponent = () => {
                     borderRadius: '5px',
                     marginTop: '20px'
                 }}>
-                    <Redeem style={{ width: '50px', height: '50px', color: 'white' }} />
-                    <Typography variant="body1" style={{ color: 'white', margin: 0 }}>
-                        К каждому заказу вы получите бонус при заключении договора до 05.08.2024
-                    </Typography>
                 </div>
             </div>
             {!isMobile && (<div style={{
