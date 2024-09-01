@@ -14,8 +14,8 @@ COPY --from=build /app/dist /usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-COPY /home/deploy/ssl/certs/your_certificate.crt /etc/ssl/certs/your_certificate.crt
-COPY /home/deploy/ssl/certs/your_private_key.key /etc/ssl/private/your_private_key.key
+COPY ./your_certificate.crt /etc/ssl/certs/your_certificate.crt
+COPY ./your_private_key.key /etc/ssl/private/your_private_key.key
 
 EXPOSE 80
 EXPOSE 443
